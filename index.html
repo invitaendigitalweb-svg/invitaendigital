@@ -3,114 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestras Invitaciones</title>
+    <title>Nuestra Invitación</title>
+    
+    <!-- Metadatos para que se vea la foto en WhatsApp -->
+    <meta property="og:title" content="Nuestra Invitación">
+    <meta property="og:description" content="Te invitamos a nuestro evento especial.">
+    <meta property="og:image" content="portada.png"> 
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background-color: #FFFFFF; font-family: 'Cinzel', serif; text-align: center; }
-
-        .banner { background-color: #6A4A66; color: #FFFFFF; padding: 25px 10px; width: 100%; margin-top: 30px; }
-        .banner h1 { margin: 0; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; }
-
-        .foto-portada { width: 90%; max-width: 500px; margin: 30px auto; display: block; border-radius: 8px; }
-
-        .boton-contenedor { margin: 10px 0; }
-
-        /* Estilo botón VER EJEMPLO */
-        .boton-ejemplo {
-            background-color: #6A4A66;
-            color: #FFFFFF;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            display: inline-block;
-            border: 1px solid #FFFFFF;
-            transition: background-color 0.3s;
-            font-family: 'Cinzel', serif;
-            margin-bottom: 10px;
-        }
-        .boton-ejemplo:hover { background-color: #553a52; }
-
-        /* Estilo botón COTIZACIÓN */
-        .boton-cotizacion {
-            background-color: #A47C9F;
-            color: #FFFFFF;
+        /* Fondo general blanco */
+        body { margin: 0; padding: 0; font-family: 'Cinzel', serif; background-color: #fff; }
+        img { width: 100%; display: block; }
+        
+        /* Espacio blanco entre secciones */
+        .espacio-blanco { height: 10px; background-color: #fff; }
+        
+        .section-container { position: relative; width: 100%; }
+        
+        .btn-ubicacion {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #6B764C;
+            color: white;
             padding: 12px 25px;
             text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            display: inline-block;
-            border: 1px solid #FFFFFF;
-            transition: background-color 0.3s;
             font-family: 'Cinzel', serif;
-            margin-bottom: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            min-width: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 10;
         }
-        .boton-cotizacion:hover { background-color: #8d6989; }
 
-        /* Estilos Formulario */
-        .contenedor-form { max-width: 340px; margin: 40px auto 50px; padding: 28px 24px; background: #f9f9f9; border-radius: 18px; box-shadow: 0 8px 25px rgba(0,0,0,.08); font-family: 'Montserrat', sans-serif; }
-        .contenedor-form h1 { color: #6A4A66; font-size: 20px; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
-        .contenedor-form p { color: #777; font-size: 13px; margin-bottom: 20px; }
-        input { width: 100%; padding: 13px; margin-bottom: 14px; border: 1.8px solid #E5E5E5; border-radius: 10px; box-sizing: border-box; }
-        button { width: 100%; padding: 13px; border: none; border-radius: 10px; background: #6A4A66; color: #fff; font-weight: 600; cursor: pointer; }
+        .btn-container-ext {
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .btn-confirmar {
+            display: inline-block;
+            background-color: #6B764C;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 18px;
+            min-width: 250px;
+        }
+
+        .slider-container { 
+            position: relative; 
+            width: 80%; 
+            margin: 20px auto; 
+            overflow: hidden; 
+            background: #fff;
+            border-radius: 15px; 
+        }
+        .slider-container img {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            opacity: 0; 
+            transition: opacity 1s ease-in-out;
+            display: block;
+        }
+        .slider-container img.active { position: relative; opacity: 1; }
     </style>
 </head>
 <body>
 
-    <!-- Invitación Básica -->
-    <div class="banner"><h1>Invitación Básica</h1></div>
-    <img src="portada1boda.png" class="foto-portada">
-    <div class="boton-contenedor">
-        <a href="https://invitaendigitalweb-svg.github.io/bodabasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
-        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+    <img src="portada.png" alt="Portada">
+    <div class="espacio-blanco"></div>
+    <img src="oracion.png" alt="Oración">
+
+    <div class="section-container">
+        <img src="ceremonia.png" alt="Ceremonia">
+        <a href="https://www.google.com/maps/place/Tizate+Sea+Garden/@20.755375,-105.3704433,15z/data=!4m15!1m8!3m7!1s0x842141843848881d:0xceb115f9117dbb0f!2sTizate+Sea+Garden!8m2!3d20.7554698!4d-105.3707493!10e5!16s%2Fg%2F11fmv9r6gn!3m5!1s0x842141843848881d:0xceb115f9117dbb0f!8m2!3d20.7554698!4d-105.3707493!16s%2Fg%2F11fmv9r6gn?hl=es_419&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" 
+           class="btn-ubicacion" target="_blank">VER UBICACIÓN</a>
     </div>
 
-    <!-- Invitación Completa -->
-    <div class="banner"><h1>Invitación Completa</h1></div>
-    <img src="portada2boda.png" class="foto-portada">
-    <div class="boton-contenedor">
-        <a href="https://invitaendigitalweb-svg.github.io/bodacompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
-        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+    <div class="slider-container">
+        <img src="https://res.cloudinary.com/gghygmrq/image/upload/v1784298292/WhatsApp_Image_2025-08-25_at_5.14.00_PM_5_zninrn.png" class="active" alt="Foto 1">
+        <img src="https://res.cloudinary.com/gghygmrq/image/upload/v1784298282/WhatsApp_Image_2025-08-25_at_5.14.00_PM_4_etip7r.png" alt="Foto 2">
+        <img src="https://res.cloudinary.com/gghygmrq/image/upload/v1784298272/WhatsApp_Image_2025-08-25_at_5.14.00_PM_3_mj65my.png" alt="Foto 3">
     </div>
 
-    <!-- Invitación Premium -->
-    <div class="banner"><h1>Invitación Premium</h1></div>
-    <img src="portada3boda.png" class="foto-portada">
-    <div class="boton-contenedor">
-        <a href="https://invitaendigitalweb-svg.github.io/bodapremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
-        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
-    </div>
-
-    <!-- Formulario de Contacto -->
-    <div class="contenedor-form">
-        <h1>CONTÁCTANOS</h1>
-        <p>Déjanos tu nombre y número de WhatsApp.</p>
-        <form id="miFormulario">
-            <input type="text" id="nombre" placeholder="Nombre completo" required>
-            <input type="tel" id="telefono" placeholder="Número de WhatsApp" required>
-            <button type="submit">ENVIAR</button>
-        </form>
-        <div id="mensaje" style="margin-top:15px; font-size:13px; color:#6A4A66;"></div>
+    <img src="regalos.png" alt="Regalos">
+    <img src="vestimenta.png" alt="Vestimenta">
+    <img src="confirmacion.png" alt="Confirmación">
+    
+    <div class="btn-container-ext">
+        <a href="https://wa.link/ik5r5d" class="btn-confirmar" target="_blank">DA CLICK</a>
     </div>
 
     <script>
-        const URL = "https://script.google.com/macros/s/AKfycbw2LwNR2llPMGvdVBqkcV9s2xPzVRF3h_d0hvRRTKw6TL80QClztwXB4NFkkk0mlvVS/exec";
-        document.getElementById("miFormulario").addEventListener("submit", function(e){
-            e.preventDefault();
-            const datos = {
-                nombre: document.getElementById("nombre").value,
-                telefono: document.getElementById("telefono").value
-            };
-            fetch(URL, { method: "POST", body: JSON.stringify(datos) })
-            .then(() => {
-                document.getElementById("mensaje").innerHTML = "✓ ¡Gracias! Hemos recibido tu información.";
-                document.getElementById("miFormulario").reset();
-            })
-            .catch(() => {
-                document.getElementById("mensaje").innerHTML = "Ocurrió un error. Inténtalo nuevamente.";
-            });
-        });
+        const images = document.querySelectorAll('.slider-container img');
+        let current = 0;
+        setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }, 2000);
     </script>
 </body>
 </html>
