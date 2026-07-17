@@ -5,79 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestras Invitaciones</title>
 
-    <!-- Metadatos para la miniatura de WhatsApp -->
+    <!-- Metadatos para WhatsApp: REEMPLAZA "TU_REPOSITORIO" POR EL NOMBRE DE TU PROYECTO -->
     <meta property="og:title" content="Nuestras Invitaciones Digitales">
-    <meta property="og:description" content="Diseñamos invitaciones elegantes y personalizadas para tu evento.">
-    <!-- Se ha configurado portada.png como miniatura -->
-    <meta property="og:image" content="portada.png">
+    <meta property="og:image" content="https://invitaendigitalweb-svg.github.io/TU_REPOSITORIO/portada.png">
     <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        body { margin: 0; padding: 0; background-color: #FFFFFF; font-family: 'Cinzel', serif; text-align: center; }
-        
-        /* Títulos más grandes */
-        .banner { background-color: #6A4A66; color: #FFFFFF; padding: 40px 15px; width: 100%; margin-top: 30px; }
-        .banner h1 { margin: 0; font-size: 32px; letter-spacing: 2px; text-transform: uppercase; }
-
-        .foto-portada { width: 90%; max-width: 500px; margin: 30px auto; display: block; border-radius: 8px; }
-        .boton-contenedor { margin: 20px 0; }
-
-        /* Botones más grandes y legibles */
-        .boton-ejemplo { 
-            background-color: #6A4A66; color: #FFFFFF; padding: 22px 45px; 
-            text-decoration: none; font-size: 20px; border-radius: 8px; 
-            display: inline-block; border: 1px solid #FFFFFF; 
-            transition: background-color 0.3s; font-family: 'Cinzel', serif; margin-bottom: 15px; 
+        body { 
+            margin: 0; padding: 0; background-color: #FFFFFF; 
+            font-family: 'Cinzel', serif; text-align: center; 
+            overflow-x: hidden; /* Evita que la página se mueva horizontalmente */
+            width: 100%;
         }
-        .boton-ejemplo:hover { background-color: #553a52; }
         
-        .boton-cotizacion { 
-            background-color: #A47C9F; color: #FFFFFF; padding: 20px 40px; 
+        .banner { background-color: #6A4A66; color: #FFFFFF; padding: 30px 10px; width: 100%; margin-top: 30px; }
+        .banner h1 { margin: 0; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; }
+
+        .foto-portada { 
+            width: 90%; max-width: 450px; 
+            margin: 25px auto; display: block; 
+            border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .boton-contenedor { margin: 20px 0 40px 0; }
+
+        .boton-ejemplo { 
+            background-color: #6A4A66; color: #FFFFFF; padding: 18px 40px; 
             text-decoration: none; font-size: 18px; border-radius: 8px; 
             display: inline-block; border: 1px solid #FFFFFF; 
-            transition: background-color 0.3s; font-family: 'Cinzel', serif; margin-bottom: 40px; 
+            margin-bottom: 15px; font-family: 'Montserrat', sans-serif;
         }
-        .boton-cotizacion:hover { background-color: #8d6989; }
+        
+        .boton-cotizacion { 
+            background-color: #A47C9F; color: #FFFFFF; padding: 15px 35px; 
+            text-decoration: none; font-size: 16px; border-radius: 8px; 
+            display: inline-block; border: 1px solid #FFFFFF; 
+            font-family: 'Montserrat', sans-serif;
+        }
 
-        .contenedor-form { max-width: 340px; margin: 40px auto 50px; padding: 30px 25px; background: #f9f9f9; border-radius: 18px; box-shadow: 0 8px 25px rgba(0,0,0,.08); font-family: 'Montserrat', sans-serif; }
-        .contenedor-form h1 { color: #6A4A66; font-size: 24px; margin-bottom: 15px; }
-        input { width: 100%; padding: 16px; margin-bottom: 15px; border: 1.8px solid #E5E5E5; border-radius: 10px; box-sizing: border-box; font-size: 16px; }
-        button { width: 100%; padding: 16px; border: none; border-radius: 10px; background: #6A4A66; color: #fff; font-size: 18px; font-weight: 600; cursor: pointer; }
+        .contenedor-form { 
+            max-width: 90%; width: 340px; margin: 20px auto 60px; 
+            padding: 25px; background: #f9f9f9; border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); font-family: 'Montserrat', sans-serif; 
+        }
+        .contenedor-form h1 { color: #6A4A66; font-size: 20px; margin-bottom: 15px; }
+        input { width: 100%; padding: 14px; margin-bottom: 12px; border: 1.5px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 14px; border: none; border-radius: 8px; background: #6A4A66; color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <!-- Invitación Básica -->
     <div class="banner"><h1>Invitación Básica</h1></div>
-    <img src="portada1boda.jpg" class="foto-portada" alt="Invitación Básica">
+    <img src="portada1boda.jpg" class="foto-portada">
     <div class="boton-contenedor">
         <a href="https://invitaendigitalweb-svg.github.io/bodabasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
         <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
     </div>
 
-    <!-- Invitación Completa -->
     <div class="banner"><h1>Invitación Completa</h1></div>
-    <img src="portada2boda.jpg" class="foto-portada" alt="Invitación Completa">
+    <img src="portada2boda.jpg" class="foto-portada">
     <div class="boton-contenedor">
         <a href="https://invitaendigitalweb-svg.github.io/bodacompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
         <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
     </div>
 
-    <!-- Invitación Premium -->
     <div class="banner"><h1>Invitación Premium</h1></div>
-    <img src="portada3boda.png" class="foto-portada" alt="Invitación Premium">
+    <img src="portada3boda.png" class="foto-portada">
     <div class="boton-contenedor">
         <a href="https://invitaendigitalweb-svg.github.io/bodapremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
         <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
     </div>
 
-    <!-- Formulario de Contacto -->
     <div class="contenedor-form">
         <h1>CONTÁCTANOS</h1>
-        <p>Déjanos tu nombre y número de WhatsApp.</p>
         <form id="miFormulario">
             <input type="text" id="nombre" placeholder="Nombre completo" required>
             <input type="tel" id="telefono" placeholder="Número de WhatsApp" required>
@@ -90,18 +93,13 @@
         const URL = "https://script.google.com/macros/s/AKfycbw2LwNR2llPMGvdVBqkcV9s2xPzVRF3h_d0hvRRTKw6TL80QClztwXB4NFkkk0mlvVS/exec";
         document.getElementById("miFormulario").addEventListener("submit", function(e){
             e.preventDefault();
-            const datos = {
-                nombre: document.getElementById("nombre").value,
-                telefono: document.getElementById("telefono").value
-            };
+            const datos = { nombre: document.getElementById("nombre").value, telefono: document.getElementById("telefono").value };
             fetch(URL, { method: "POST", body: JSON.stringify(datos) })
             .then(() => {
                 document.getElementById("mensaje").innerHTML = "✓ ¡Gracias! Hemos recibido tu información.";
                 document.getElementById("miFormulario").reset();
             })
-            .catch(() => {
-                document.getElementById("mensaje").innerHTML = "Ocurrió un error. Inténtalo nuevamente.";
-            });
+            .catch(() => { document.getElementById("mensaje").innerHTML = "Error al enviar."; });
         });
     </script>
 </body>
