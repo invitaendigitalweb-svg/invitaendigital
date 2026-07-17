@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Invitaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; background-color: #FFFFFF; font-family: 'Cinzel', serif; text-align: center; }
+
+        .banner { background-color: #6A4A66; color: #FFFFFF; padding: 25px 10px; width: 100%; margin-top: 30px; }
+        .banner h1 { margin: 0; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; }
+
+        .foto-portada { width: 90%; max-width: 500px; margin: 30px auto; display: block; border-radius: 8px; }
+
+        .boton-contenedor { margin: 10px 0; }
+
+        /* Estilo botón VER EJEMPLO */
+        .boton-ejemplo {
+            background-color: #6A4A66;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            display: inline-block;
+            border: 1px solid #FFFFFF;
+            transition: background-color 0.3s;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+        }
+        .boton-ejemplo:hover { background-color: #553a52; }
+
+        /* Estilo botón COTIZACIÓN */
+        .boton-cotizacion {
+            background-color: #A47C9F;
+            color: #FFFFFF;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            display: inline-block;
+            border: 1px solid #FFFFFF;
+            transition: background-color 0.3s;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 30px;
+        }
+        .boton-cotizacion:hover { background-color: #8d6989; }
+
+        /* Estilos Formulario */
+        .contenedor-form { max-width: 340px; margin: 40px auto 50px; padding: 28px 24px; background: #f9f9f9; border-radius: 18px; box-shadow: 0 8px 25px rgba(0,0,0,.08); font-family: 'Montserrat', sans-serif; }
+        .contenedor-form h1 { color: #6A4A66; font-size: 20px; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+        .contenedor-form p { color: #777; font-size: 13px; margin-bottom: 20px; }
+        input { width: 100%; padding: 13px; margin-bottom: 14px; border: 1.8px solid #E5E5E5; border-radius: 10px; box-sizing: border-box; }
+        button { width: 100%; padding: 13px; border: none; border-radius: 10px; background: #6A4A66; color: #fff; font-weight: 600; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- Invitación Básica -->
+    <div class="banner"><h1>Invitación Básica</h1></div>
+    <img src="portada1boda.png" class="foto-portada">
+    <div class="boton-contenedor">
+        <a href="https://invitaendigitalweb-svg.github.io/bodabasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
+        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+    </div>
+
+    <!-- Invitación Completa -->
+    <div class="banner"><h1>Invitación Completa</h1></div>
+    <img src="portada2boda.png" class="foto-portada">
+    <div class="boton-contenedor">
+        <a href="https://invitaendigitalweb-svg.github.io/bodacompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
+        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+    </div>
+
+    <!-- Invitación Premium -->
+    <div class="banner"><h1>Invitación Premium</h1></div>
+    <img src="portada3boda.png" class="foto-portada">
+    <div class="boton-contenedor">
+        <a href="https://invitaendigitalweb-svg.github.io/bodapremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
+        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <div class="contenedor-form">
+        <h1>CONTÁCTANOS</h1>
+        <p>Déjanos tu nombre y número de WhatsApp.</p>
+        <form id="miFormulario">
+            <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <input type="tel" id="telefono" placeholder="Número de WhatsApp" required>
+            <button type="submit">ENVIAR</button>
+        </form>
+        <div id="mensaje" style="margin-top:15px; font-size:13px; color:#6A4A66;"></div>
+    </div>
+
+    <script>
+        const URL = "https://script.google.com/macros/s/AKfycbw2LwNR2llPMGvdVBqkcV9s2xPzVRF3h_d0hvRRTKw6TL80QClztwXB4NFkkk0mlvVS/exec";
+        document.getElementById("miFormulario").addEventListener("submit", function(e){
+            e.preventDefault();
+            const datos = {
+                nombre: document.getElementById("nombre").value,
+                telefono: document.getElementById("telefono").value
+            };
+            fetch(URL, { method: "POST", body: JSON.stringify(datos) })
+            .then(() => {
+                document.getElementById("mensaje").innerHTML = "✓ ¡Gracias! Hemos recibido tu información.";
+                document.getElementById("miFormulario").reset();
+            })
+            .catch(() => {
+                document.getElementById("mensaje").innerHTML = "Ocurrió un error. Inténtalo nuevamente.";
+            });
+        });
+    </script>
+</body>
+</html>
