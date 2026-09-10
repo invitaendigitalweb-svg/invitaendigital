@@ -3,73 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestras Invitaciones</title>
+    <title>Nuestras Invitaciones Exclusivas</title>
 
     <!-- Metadatos para WhatsApp -->
-    <meta property="og:title" content="Nuestras Invitaciones Digitales">
+    <meta property="og:title" content="Nuestras Invitaciones Digitales de Lujo">
     <meta property="og:image" content="https://invitaendigitalweb-svg.github.io/TU_REPOSITORIO/portada.png">
     <meta property="og:type" content="website">
 
-    <!-- Tipografías: Playfair Display (Molde elegante) y Montserrat (Texto limpio) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Tipografías en Tendencia:
+         - Bodoni Moda: Títulos principales (editorial, estética Vogue/Haute Couture)
+         - Cormorant Garamond: Para subtítulos y títulos de invitaciones (delgada, fina, romántica)
+         - Montserrat: Para texto secundario y botones
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        body { 
-            margin: 0; padding: 0; background-color: #FFFFFF; 
-            font-family: 'Montserrat', sans-serif; text-align: center; 
-            overflow-x: hidden;
-            width: 100%;
+        :root {
+            --morado-principal: #4A2E4B;     /* Morado berenjena refinado */
+            --morado-oscuro: #351F36;        /* Tono profundo para hovers */
+            --morado-suave: #F7F3F7;         /* Fondo leve lavanda/crema */
+            --acento-oro-rosa: #D1B8C8;      /* Oro rosa tenue */
+            --color-fondo: #FAF8FA;
+            --color-tarjeta: #FFFFFF;
+            --color-texto: #423843;
+            --sombra-elegante: 0 10px 30px rgba(74, 46, 75, 0.06);
+            --sombra-elevada: 0 15px 35px rgba(74, 46, 75, 0.12);
         }
 
-        /* Título Principal */
+        * {
+            box-sizing: border-box;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 40px 15px; 
+            background-color: var(--color-fondo); 
+            font-family: 'Montserrat', sans-serif; 
+            color: var(--color-texto);
+            text-align: center; 
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Título Principal de la Página */
         .header-principal {
-            margin-top: 30px;
-            margin-bottom: 20px;
-            color: #6A4A66;
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 6px;
+            color: var(--morado-principal);
+            font-family: 'Bodoni Moda', serif;
+            font-size: 32px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+        }
+
+        .subtitulo-header {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8C6A88;
+            font-weight: 500;
+            margin-bottom: 40px;
         }
 
         /* Contenedor principal de categorías */
         .categorias-container {
-            max-width: 500px;
-            margin: 0 auto 30px auto;
-            padding: 0 15px;
+            max-width: 520px;
+            margin: 0 auto 50px auto;
         }
 
-        /* Botones Principales (15 Años y Bodas) */
+        /* Botones Principales de Categoría (Desplegables) */
         .boton-categoria {
-            background-color: #6A4A66;
+            background-color: var(--morado-principal);
             color: #FFFFFF;
             width: 100%;
-            padding: 14px 20px;
-            font-size: 16px;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            letter-spacing: 0.8px;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             border: none;
-            border-radius: 12px;
+            border-radius: 8px;
             cursor: pointer;
-            margin-top: 15px;
-            box-shadow: 0 4px 12px rgba(106, 74, 102, 0.2);
+            margin-top: 20px;
+            box-shadow: var(--sombra-elegante);
             transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-sizing: border-box;
         }
 
         .boton-categoria:hover {
-            background-color: #553a52;
+            background-color: var(--morado-oscuro);
+            box-shadow: var(--sombra-elevada);
         }
 
         .boton-categoria .flecha {
-            font-size: 12px;
+            font-size: 10px;
             font-family: 'Montserrat', sans-serif;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
+            color: var(--acento-oro-rosa);
         }
 
         .boton-categoria.activo .flecha {
@@ -80,142 +117,271 @@
         .contenido-desplegable {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            background-color: #FAF8FA;
-            border-radius: 0 0 12px 12px;
-            margin-bottom: 10px;
+            transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            background-color: transparent;
+            margin-bottom: 15px;
+            padding: 0 5px;
         }
 
-        /* Estilos dentro de los desplegables */
-        .banner { 
-            background-color: #6A4A66; 
-            color: #FFFFFF; 
-            padding: 12px 10px; 
-            width: 100%; 
-            margin-top: 20px; 
-            box-sizing: border-box; 
+        /* Tarjeta individual para cada tipo de invitación */
+        .tarjeta-invitacion {
+            background: var(--color-tarjeta);
+            border-radius: 12px;
+            padding: 32px 22px;
+            margin: 25px 0;
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid rgba(209, 184, 200, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        .banner h2 { 
-            margin: 0; 
-            font-family: 'Playfair Display', serif;
-            font-size: 20px; 
-            font-weight: 600;
-            letter-spacing: 0.5px;
+
+        .tarjeta-invitacion:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sombra-elevada);
+        }
+
+        /* Títulos de las Invitaciones (Básica, Completa, Premium) - Letra Fina y Elegante */
+        .tarjeta-invitacion h2 { 
+            margin: 0 0 18px 0; 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px; 
+            font-weight: 400; /* Fina y delicada */
+            font-style: italic; /* Le da un toque romántico y de alta gama */
+            letter-spacing: 1px;
+            color: var(--morado-principal);
+            position: relative;
+            display: inline-block;
+        }
+
+        .tarjeta-invitacion h2::after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 1px;
+            background-color: var(--acento-oro-rosa);
+            margin: 8px auto 0 auto;
         }
 
         .foto-portada { 
-            width: 90%; max-width: 450px; 
-            margin: 25px auto; display: block; 
-            border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            width: 100%; 
+            max-width: 400px; 
+            margin: 0 auto 25px auto; 
+            display: block; 
+            border-radius: 8px; 
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
         }
 
-        .boton-contenedor { margin: 20px 0 40px 0; }
+        .boton-contenedor { 
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
 
         .boton-ejemplo { 
-            background-color: #6A4A66; color: #FFFFFF; padding: 14px 32px; 
-            text-decoration: none; font-size: 14px; border-radius: 8px; 
-            display: inline-block; border: 1px solid #FFFFFF; 
-            margin-bottom: 12px; font-family: 'Montserrat', sans-serif;
-            font-weight: 500; letter-spacing: 1px;
+            background-color: var(--morado-principal); 
+            color: #FFFFFF; 
+            padding: 13px 28px; 
+            text-decoration: none; 
+            font-size: 11px; 
+            border-radius: 6px; 
+            display: inline-block; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            width: 85%;
+            max-width: 270px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--morado-principal);
+        }
+
+        .boton-ejemplo:hover {
+            background-color: transparent;
+            color: var(--morado-principal);
         }
         
         .boton-cotizacion { 
-            background-color: #A47C9F; color: #FFFFFF; padding: 12px 28px; 
-            text-decoration: none; font-size: 13px; border-radius: 8px; 
-            display: inline-block; border: 1px solid #FFFFFF; 
+            background-color: transparent; 
+            color: var(--morado-principal); 
+            padding: 11px 28px; 
+            text-decoration: none; 
+            font-size: 11px; 
+            border-radius: 6px; 
+            display: inline-block; 
+            border: 1px solid var(--acento-oro-rosa); 
             font-family: 'Montserrat', sans-serif;
-            font-weight: 500; letter-spacing: 1px;
+            font-weight: 500; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            width: 85%;
+            max-width: 270px;
+            transition: all 0.3s ease;
+        }
+
+        .boton-cotizacion:hover {
+            background-color: var(--morado-suave);
+            border-color: var(--morado-principal);
         }
 
         /* Formulario de contacto */
         .contenedor-form { 
-            max-width: 90%; width: 340px; margin: 40px auto 60px; 
-            padding: 25px; background: #f9f9f9; border-radius: 15px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); font-family: 'Montserrat', sans-serif; 
-            box-sizing: border-box;
+            max-width: 520px; 
+            margin: 60px auto 40px; 
+            padding: 42px 30px; 
+            background: var(--color-tarjeta); 
+            border-radius: 12px; 
+            box-shadow: var(--sombra-elegante); 
+            border: 1px solid rgba(209, 184, 200, 0.4);
         }
+
         .contenedor-form h1 { 
-            color: #6A4A66; 
-            font-family: 'Playfair Display', serif;
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            font-weight: 700;
+            color: var(--morado-principal); 
+            font-family: 'Bodoni Moda', serif;
+            font-size: 28px; 
+            margin-top: 0;
+            margin-bottom: 8px; 
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
+
+        .contenedor-form p {
+            font-size: 12px;
+            color: #7A6B7B;
+            margin-bottom: 28px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
         input { 
-            width: 100%; padding: 12px; margin-bottom: 12px; 
-            border: 1.5px solid #ddd; border-radius: 8px; 
-            box-sizing: border-box; font-family: 'Montserrat', sans-serif;
+            width: 100%; 
+            padding: 15px 16px; 
+            margin-bottom: 16px; 
+            border: 1px solid #E5DCE3; 
+            border-radius: 6px; 
+            font-family: 'Montserrat', sans-serif;
             font-size: 13px;
+            background-color: #FAF8FA;
+            color: var(--color-texto);
+            transition: all 0.3s ease;
+            outline: none;
         }
-        button { 
-            width: 100%; padding: 12px; border: none; border-radius: 8px; 
-            background: #6A4A66; color: #fff; font-size: 14px; 
-            font-family: 'Montserrat', sans-serif; font-weight: 600; 
-            letter-spacing: 1px; cursor: pointer; 
+
+        input:focus {
+            border-color: var(--morado-principal);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(74, 46, 75, 0.08);
+        }
+
+        button[type="submit"] { 
+            width: 100%; 
+            padding: 15px; 
+            border: none; 
+            border-radius: 6px; 
+            background: var(--morado-principal); 
+            color: #FFF; 
+            font-size: 11px; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 600; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--morado-oscuro);
+        }
+
+        #mensaje {
+            margin-top: 20px; 
+            font-size: 13px; 
+            color: var(--morado-principal);
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
     <h1 class="header-principal">Nuestras Invitaciones</h1>
+    <div class="subtitulo-header">Diseños Exclusivos y Personalizados</div>
 
     <div class="categorias-container">
         <!-- BOTÓN 1: INVITACIONES DE 15 AÑOS -->
         <button class="boton-categoria" onclick="toggleSeccion('xv-anos', this)">
-            <span>Invitaciones de 15 Años</span>
+            <span>Invitaciones de XV Años</span>
             <span class="flecha">▼</span>
         </button>
         
         <div id="xv-anos" class="contenido-desplegable">
-            <div class="banner"><h2>Invitación Básica</h2></div>
-            <img src="portada1xv.png" class="foto-portada" alt="Invitación Básica 15 Años">
-            <div class="boton-contenedor">
-                <a href="https://invitaendigitalweb-svg.github.io/xvbasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
-                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            <!-- Invitación Básica -->
+            <div class="tarjeta-invitacion">
+                <h2>Invitación Básica</h2>
+                <img src="portada1xv.png" class="foto-portada" alt="Invitación Básica 15 Años">
+                <div class="boton-contenedor">
+                    <a href="https://invitaendigitalweb-svg.github.io/xvbasica/" class="boton-ejemplo">VER EJEMPLO</a>
+                    <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+                </div>
             </div>
 
-            <div class="banner"><h2>Invitación Completa</h2></div>
-            <img src="portada2xv.png" class="foto-portada" alt="Invitación Completa 15 Años">
-            <div class="boton-contenedor">
-                <a href="https://invitaendigitalweb-svg.github.io/xvcompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
-                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            <!-- Invitación Completa -->
+            <div class="tarjeta-invitacion">
+                <h2>Invitación Completa</h2>
+                <img src="portada2xv.png" class="foto-portada" alt="Invitación Completa 15 Años">
+                <div class="boton-contenedor">
+                    <a href="https://invitaendigitalweb-svg.github.io/xvcompleta/" class="boton-ejemplo">VER EJEMPLO</a>
+                    <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+                </div>
             </div>
 
-            <div class="banner"><h2>Invitación Premium</h2></div>
-            <img src="portada3xv.png" class="foto-portada" alt="Invitación Premium 15 Años">
-            <div class="boton-contenedor">
-                <a href="https://invitaendigitalweb-svg.github.io/xvpremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
-                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            <!-- Invitación Premium -->
+            <div class="tarjeta-invitacion">
+                <h2>Invitación Premium</h2>
+                <img src="portada3xv.png" class="foto-portada" alt="Invitación Premium 15 Años">
+                <div class="boton-contenedor">
+                    <a href="https://invitaendigitalweb-svg.github.io/xvpremium/" class="boton-ejemplo">VER EJEMPLO</a>
+                    <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+                </div>
             </div>
         </div>
 
         <!-- BOTÓN 2: INVITACIONES PARA BODA -->
         <button class="boton-categoria" onclick="toggleSeccion('bodas', this)">
-            <span>Invitaciones para Boda</span>
+            <span>Invitaciones de Boda</span>
             <span class="flecha">▼</span>
         </button>
         
         <div id="bodas" class="contenido-desplegable">
-            <div class="banner"><h2>Invitación Básica</h2></div>
-            <img src="portada1boda.jpg" class="foto-portada" alt="Invitación Básica Boda">
-            <div class="boton-contenedor">
-                <a href="https://invitaendigitalweb-svg.github.io/bodabasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
-                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            <!-- Invitación Básica -->
+            <div class="tarjeta-invitacion">
+                <h2>Invitación Básica</h2>
+                <img src="portada1boda.jpg" class="foto-portada" alt="Invitación Básica Boda">
+                <div class="boton-contenedor">
+                    <a href="https://invitaendigitalweb-svg.github.io/bodabasica/" class="boton-ejemplo">VER EJEMPLO</a>
+                    <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+                </div>
             </div>
 
-            <div class="banner"><h2>Invitación Completa</h2></div>
-            <img src="portada2boda.jpg" class="foto-portada" alt="Invitación Completa Boda">
-            <div class="boton-contenedor">
-                <a href="https://invitaendigitalweb-svg.github.io/bodacompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
-                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            <!-- Invitación Completa -->
+            <div class="tarjeta-invitacion">
+                <h2>Invitación Completa</h2>
+                <img src="portada2boda.jpg" class="foto-portada" alt="Invitación Completa Boda">
+                <div class="boton-contenedor">
+                    <a href="https://invitaendigitalweb-svg.github.io/bodacompleta/" class="boton-ejemplo">VER EJEMPLO</a>
+                    <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+                </div>
             </div>
 
-            <div class="banner"><h2>Invitación Premium</h2></div>
-            <img src="portada3boda.png" class="foto-portada" alt="Invitación Premium Boda">
-            <div class="boton-contenedor">
-                <a href="https://invitaendigitalweb-svg.github.io/bodapremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
-                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            <!-- Invitación Premium -->
+            <div class="tarjeta-invitacion">
+                <h2>Invitación Premium</h2>
+                <img src="portada3boda.png" class="foto-portada" alt="Invitación Premium Boda">
+                <div class="boton-contenedor">
+                    <a href="https://invitaendigitalweb-svg.github.io/bodapremium/" class="boton-ejemplo">VER EJEMPLO</a>
+                    <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+                </div>
             </div>
         </div>
     </div>
@@ -223,12 +389,13 @@
     <!-- FORMULARIO DE CONTACTO -->
     <div class="contenedor-form">
         <h1>Contáctanos</h1>
+        <p>Déjanos tus datos para brindarte atención personalizada</p>
         <form id="miFormulario">
             <input type="text" id="nombre" placeholder="Nombre completo" required>
             <input type="tel" id="telefono" placeholder="Número de WhatsApp" required>
-            <button type="submit">ENVIAR</button>
+            <button type="submit">ENVIAR INFORMACIÓN</button>
         </form>
-        <div id="mensaje" style="margin-top:15px; font-size:14px; color:#6A4A66;"></div>
+        <div id="mensaje"></div>
     </div>
 
     <script>
@@ -249,10 +416,10 @@
             const datos = { nombre: document.getElementById("nombre").value, telefono: document.getElementById("telefono").value };
             fetch(URL, { method: "POST", body: JSON.stringify(datos) })
             .then(() => {
-                document.getElementById("mensaje").innerHTML = "✓ ¡Gracias! Hemos recibido tu información.";
+                document.getElementById("mensaje").innerHTML = "✓ Hemos recibido tu información correctamente.";
                 document.getElementById("miFormulario").reset();
             })
-            .catch(() => { document.getElementById("mensaje").innerHTML = "Error al enviar."; });
+            .catch(() => { document.getElementById("mensaje").innerHTML = "Hubo un error al enviar tu información."; });
         });
     </script>
 </body>
