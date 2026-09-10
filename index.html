@@ -10,19 +10,80 @@
     <meta property="og:image" content="https://invitaendigitalweb-svg.github.io/TU_REPOSITORIO/portada.png">
     <meta property="og:type" content="website">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         body { 
             margin: 0; padding: 0; background-color: #FFFFFF; 
             font-family: 'Cinzel', serif; text-align: center; 
-            overflow-x: hidden; /* Evita que la página se mueva horizontalmente */
+            overflow-x: hidden;
             width: 100%;
         }
-        
-        .banner { background-color: #6A4A66; color: #FFFFFF; padding: 30px 10px; width: 100%; margin-top: 30px; }
-        .banner h1 { margin: 0; font-size: 20px; letter-spacing: 2px; text-transform: uppercase; }
+
+        .header-principal {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #6A4A66;
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+
+        /* Contenedor principal de categorías */
+        .categorias-container {
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+            padding: 0 15px;
+        }
+
+        /* Botones Principales (15 Años y Bodas) */
+        .boton-categoria {
+            background-color: #6A4A66;
+            color: #FFFFFF;
+            width: 100%;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-family: 'Cinzel', serif;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .boton-categoria:hover {
+            background-color: #553a52;
+        }
+
+        .boton-categoria .flecha {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .boton-categoria.activo .flecha {
+            transform: rotate(180deg);
+        }
+
+        /* Contenido desplegable */
+        .contenido-desplegable {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background-color: #FAF8FA;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos dentro de los desplegables */
+        .banner { background-color: #6A4A66; color: #FFFFFF; padding: 20px 10px; width: 100%; margin-top: 20px; box-sizing: border-box; }
+        .banner h2 { margin: 0; font-size: 20px; letter-spacing: 2px; text-transform: uppercase; }
 
         .foto-portada { 
             width: 90%; max-width: 450px; 
@@ -46,10 +107,12 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        /* Formulario de contacto */
         .contenedor-form { 
-            max-width: 90%; width: 340px; margin: 20px auto 60px; 
+            max-width: 90%; width: 340px; margin: 40px auto 60px; 
             padding: 25px; background: #f9f9f9; border-radius: 15px; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.1); font-family: 'Montserrat', sans-serif; 
+            box-sizing: border-box;
         }
         .contenedor-form h1 { color: #6A4A66; font-size: 20px; margin-bottom: 15px; }
         input { width: 100%; padding: 14px; margin-bottom: 12px; border: 1.5px solid #ddd; border-radius: 8px; box-sizing: border-box; }
@@ -58,27 +121,69 @@
 </head>
 <body>
 
-    <div class="banner"><h1>Invitación Básica</h1></div>
-    <img src="portada1boda.jpg" class="foto-portada">
-    <div class="boton-contenedor">
-        <a href="https://invitaendigitalweb-svg.github.io/bodabasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
-        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+    <h1 class="header-principal">NUESTRAS INVITACIONES</h1>
+
+    <div class="categorias-container">
+        <!-- BOTÓN 1: INVITACIONES DE 15 AÑOS -->
+        <button class="boton-categoria" onclick="toggleSeccion('xv-anos', this)">
+            <span>Invitaciones de 15 Años</span>
+            <span class="flecha">▼</span>
+        </button>
+        
+        <div id="xv-anos" class="contenido-desplegable">
+            <div class="banner"><h2>Invitación Básica</h2></div>
+            <img src="portada1xv.png" class="foto-portada" alt="Invitación Básica 15 Años">
+            <div class="boton-contenedor">
+                <a href="https://invitaendigitalweb-svg.github.io/xvbasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
+                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            </div>
+
+            <div class="banner"><h2>Invitación Completa</h2></div>
+            <img src="portada2xv.png" class="foto-portada" alt="Invitación Completa 15 Años">
+            <div class="boton-contenedor">
+                <a href="https://invitaendigitalweb-svg.github.io/xvcompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
+                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            </div>
+
+            <div class="banner"><h2>Invitación Premium</h2></div>
+            <img src="portada3xv.png" class="foto-portada" alt="Invitación Premium 15 Años">
+            <div class="boton-contenedor">
+                <a href="https://invitaendigitalweb-svg.github.io/xvpremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
+                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            </div>
+        </div>
+
+        <!-- BOTÓN 2: INVITACIONES PARA BODA -->
+        <button class="boton-categoria" onclick="toggleSeccion('bodas', this)">
+            <span>Invitaciones para Boda</span>
+            <span class="flecha">▼</span>
+        </button>
+        
+        <div id="bodas" class="contenido-desplegable">
+            <div class="banner"><h2>Invitación Básica</h2></div>
+            <img src="portada1boda.jpg" class="foto-portada" alt="Invitación Básica Boda">
+            <div class="boton-contenedor">
+                <a href="https://invitaendigitalweb-svg.github.io/bodabasica/" class="boton-ejemplo">VER EJEMPLO</a><br>
+                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            </div>
+
+            <div class="banner"><h2>Invitación Completa</h2></div>
+            <img src="portada2boda.jpg" class="foto-portada" alt="Invitación Completa Boda">
+            <div class="boton-contenedor">
+                <a href="https://invitaendigitalweb-svg.github.io/bodacompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
+                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            </div>
+
+            <div class="banner"><h2>Invitación Premium</h2></div>
+            <img src="portada3boda.png" class="foto-portada" alt="Invitación Premium Boda">
+            <div class="boton-contenedor">
+                <a href="https://invitaendigitalweb-svg.github.io/bodapremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
+                <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
+            </div>
+        </div>
     </div>
 
-    <div class="banner"><h1>Invitación Completa</h1></div>
-    <img src="portada2boda.jpg" class="foto-portada">
-    <div class="boton-contenedor">
-        <a href="https://invitaendigitalweb-svg.github.io/bodacompleta/" class="boton-ejemplo">VER EJEMPLO</a><br>
-        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
-    </div>
-
-    <div class="banner"><h1>Invitación Premium</h1></div>
-    <img src="portada3boda.png" class="foto-portada">
-    <div class="boton-contenedor">
-        <a href="https://invitaendigitalweb-svg.github.io/bodapremium/" class="boton-ejemplo">VER EJEMPLO</a><br>
-        <a href="https://wa.link/k0ohs4" target="_blank" class="boton-cotizacion">COTIZACIÓN</a>
-    </div>
-
+    <!-- FORMULARIO DE CONTACTO -->
     <div class="contenedor-form">
         <h1>CONTÁCTANOS</h1>
         <form id="miFormulario">
@@ -90,6 +195,19 @@
     </div>
 
     <script>
+        // Función para desplegar/contraer las secciones
+        function toggleSeccion(id, btn) {
+            const contenido = document.getElementById(id);
+            btn.classList.toggle("activo");
+
+            if (contenido.style.maxHeight) {
+                contenido.style.maxHeight = null;
+            } else {
+                contenido.style.maxHeight = contenido.scrollHeight + "px";
+            }
+        }
+
+        // Script de envío a Google Sheets
         const URL = "https://script.google.com/macros/s/AKfycbw2LwNR2llPMGvdVBqkcV9s2xPzVRF3h_d0hvRRTKw6TL80QClztwXB4NFkkk0mlvVS/exec";
         document.getElementById("miFormulario").addEventListener("submit", function(e){
             e.preventDefault();
